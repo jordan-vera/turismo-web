@@ -7,5 +7,70 @@
 }
 
 .contenedor-categoria {
-  background-color: rgb(203, 197, 255);
+  background-color: rgb(212, 208, 255);
+  position: relative;
+}
+
+.img-categoria {
+  height: 50px;
+}
+
+.texto-categoria {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-categoria {
+  cursor: pointer;
+}
+
+.image-zona {
+  width: 100%;
+}
+
+.nombre-zona {
+  font-size: 13px;
+  padding-top: 7px;
+  padding-left: 1px;
+  padding-right: 1px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 48px;
+}
+
+.descripcion-zona {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+}
+
+.box {
+  width: 100%;
+  height: 140px;
+  background: rgb(243, 243, 243);
+  overflow: hidden;
+  text-align: center;
+}
+
+.box img {
+  width: auto;
+  height: 100%;
+}
+
+.canton-zona {
+  text-align: right;
+  margin-top: 7px;
+  font-size: 12px;
 }

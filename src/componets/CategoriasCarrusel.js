@@ -1,5 +1,6 @@
 import React from "react";
 import apiCategoria from "../services/CategoriaService";
+import urlCategoria from "../services/urlGlobal"
 
 class CategoriasCarrusel extends React.Component {
     state = {
@@ -12,10 +13,24 @@ class CategoriasCarrusel extends React.Component {
         this.setState({ loading: true });
         try {
             const data = await apiCategoria.Categoria.all();
-            console.log(data.response);
             this.setState({ loading: false, error: false, categorias: data.response });
         } catch (error) {
             this.setState({ loading: false, error: true });
+        }
+    }
+
+    spinner = () => {
+        if (this.state.loading) {
+            return (
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden"></span>
+                    </div>
+                    Cargando...
+                </div>
+            );
+        } else {
+            return;
         }
     }
 
@@ -26,11 +41,23 @@ class CategoriasCarrusel extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container p-2 contenedor-categoria rounded">
-                    <div className="row">
-                        <div className="col-2 bg-info">jd</div>
+                <div className="container testimonial-categoria contenedor-categoria rounded mt-2">
+                    <div className="row p-2" >
+                        {
+                            this.state.categorias.map((categoria) => {
+                                return (
+                                    <div className="col-1 p-1" key={categoria.idcategoria}>
+                                        <div className="border rounded text-center pt-1 bg-white card-categoria">
+                                            <img className="img-categoria rounded" src={urlCategoria.UrlGlobal.urlImageCategorias + categoria.image} />
+                                            <br/>
+                                            <small className="texto-categoria">{categoria.categoria}</small>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        }
                     </div>
-                    mhbms
+                    {this.spinner()}
                 </div>
             </React.Fragment>
         )
