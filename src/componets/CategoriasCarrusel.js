@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import apiCategoria from "../services/CategoriaService";
 import urlCategoria from "../services/urlGlobal"
 
@@ -47,11 +48,13 @@ class CategoriasCarrusel extends React.Component {
                             this.state.categorias.map((categoria) => {
                                 return (
                                     <div className="col-1 p-1" key={categoria.idcategoria}>
-                                        <div className="border rounded text-center pt-1 bg-white card-categoria">
-                                            <img className="img-categoria rounded" src={urlCategoria.UrlGlobal.urlImageCategorias + categoria.image} />
-                                            <br/>
-                                            <small className="texto-categoria">{categoria.categoria}</small>
-                                        </div>
+                                        <Link to={"/categoria-lugar/" + categoria.idcategoria} style={{ textDecoration: 'none' }}>
+                                            <div className="border rounded text-center pt-1 bg-white card-categoria">
+                                                <img className="img-categoria rounded" src={urlCategoria.UrlGlobal.urlImageCategorias + categoria.image} />
+                                                <br />
+                                                <small className="texto-categoria">{categoria.categoria}</small>
+                                            </div>
+                                        </Link>
                                     </div>
                                 );
                             })

@@ -24,6 +24,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: black;
 }
 
 .card-categoria {
@@ -73,4 +74,22 @@
   text-align: right;
   margin-top: 7px;
   font-size: 12px;
+}
+
+.footer-all {
+  margin-top: 50px;
+  background-color: rgb(243, 230, 255);
+  padding-bottom: 30px;
+}
+
+.image-play-store {
+  height: 70px;
+}
+
+.logo-footer {
+  height: 50px;
+}
+
+.footer-fin {
+  background-color: rgb(230, 203, 255);
 }
