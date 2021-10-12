@@ -12,11 +12,11 @@ class Navbar extends React.Component {
         try {
             const data = await apiPais.Pais.externo();
             let pais = data.country_name;
-            if (pais == 'Ecuador') {
+            if (pais === 'Ecuador') {
                 this.setState({ idpais: 1 });
-            } else if (pais == 'Colombia') {
+            } else if (pais === 'Colombia') {
                 this.setState({ idpais: 2 });
-            } else if (pais == 'Peru' || pais == 'Perú') {
+            } else if (pais === 'Peru' || pais === 'Perú') {
                 this.setState({ idpais: 3 });
             } else {
                 this.setState({ idpais: 1 });

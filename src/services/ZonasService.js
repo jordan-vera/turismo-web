@@ -20,6 +20,12 @@ const apiLugares = {
         recientes() {
             return callApi(`/zonas-recientes`);
         },
+        categoriaAll(idcategoria) {
+            return callApi(`/zonacategoria/${idcategoria}`);
+        },
+        one(idzona) {
+            return callApi(`/zona/${idzona}`);
+        },
     },
 };
 
